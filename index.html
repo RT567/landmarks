@@ -2,8 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>landmark explorer</title>
   <style>#app{text-align:center}#app div[style*="relative"]{margin:0 auto}</style>
+  <style>
+    /* Phones only. Elements are targeted by their inline styles because the
+       compiled bundle gives them no classes; desktop (>640px) is untouched. */
+    @media (max-width: 640px) {
+      /* rotated images poke outside their box; don't let that scroll sideways */
+      #app { overflow-x: clip; }
+      #app .rc-title-label { font-size: 17px; line-height: 1.35 !important; }
+      /* drawing: 600x450 box, scaled down whole so rotations stay centred */
+      #app div[style*="height: 450px"] { zoom: .75; }
+      #app .rc-gap[style*="140px"] { height: 110px !important; }
+      #app .rc-gap[style*="120px"] { height: 90px !important; }
+      #app input[type="range"] { width: min(320px, 85vw) !important; height: 36px; }
+      #app button { font-size: 18px; padding: 12px 22px; }
+      /* spinner strip: fit the screen and centre the selector. The landed cell
+         sits 375px into the 600px-wide strip, so shift the cells to match. */
+      #app div[style*="overflow: hidden"] { width: auto !important; max-width: 600px; margin: 28px auto !important; }
+      #app div[style*="overflow: hidden"] > div:first-child { margin-left: calc(50% - 375px); }
+      #app div[style*="overflow: hidden"] > div:first-child > div { min-height: 56px; padding: 4px 8px; }
+      #app div[style*="overflow: hidden"] > div:last-child { left: 50% !important; }
+    }
+    @media (max-width: 480px) {
+      #app div[style*="height: 450px"] { zoom: .6; }
+      #app .rc-gap[style*="140px"] { height: 90px !important; }
+      #app .rc-gap[style*="120px"] { height: 70px !important; }
+    }
+    @media (max-width: 380px) {
+      #app div[style*="height: 450px"] { zoom: .55; }
+    }
+  </style>
 </head>
 <body>
   <!-- Your app root: -->

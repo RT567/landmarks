@@ -6,3 +6,4 @@ with Rob. Convention: `NN-topic-YYYY-MM-DD.md`, numbered in order; add a new dat
 significant change or decision, and keep the newest doc's "current state" accurate.
 
 1. [01-recovered-source-and-patching-2026-09-02.md](01-recovered-source-and-patching-2026-09-02.md) — no source exists; how to recover it from the source map and patch the minified bundle safely
+2. [02-mobile-layout-2026-10-05.md](02-mobile-layout-2026-10-05.md) — viewport meta + phone-only CSS (scaled drawing, centred spinner selector, bigger tap targets)
